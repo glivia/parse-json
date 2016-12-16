@@ -1,9 +1,9 @@
 {
-  "name": "parse-json",
+  "name": "parse-json-pretty",
   "version": "2.2.0",
   "description": "Parse JSON with more helpful errors",
   "license": "MIT",
-  "repository": "sindresorhus/parse-json",
+  "repository": "sorrycc/parse-json-pretty",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
