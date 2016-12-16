@@ -6,6 +6,7 @@
 
 // RTFM: http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf
 
+var chalk = require('chalk')
 var Uni = require('./unicode')
 
 function isHexDigit(x) {
@@ -36,7 +37,7 @@ var unescapeMap = {
 }
 
 function formatError(input, msg, position, lineno, column, json5) {
-  var result = msg + ' at ' + (lineno + 1) + ':' + (column + 1)
+  var result = 'Error\nSyntax error: ' + msg + ' , (' + (lineno + 1) + ':' + (column + 1) + ')\n'
     , tmppos = position - column - 1
     , srcline = ''
     , underline = ''
@@ -54,14 +55,14 @@ function formatError(input, msg, position, lineno, column, json5) {
     if (isLineTerminator(chr) || tmppos === input.length) {
       if (position >= tmppos) {
         // ending line error, so show it after the last char
-        underline += '^'
+        underline += chalk.red.bold('^')
       }
       break
     }
     srcline += chr
 
     if (position === tmppos) {
-      underline += '^'
+      underline += chalk.red.bold('^')
     } else if (position > tmppos) {
       underline += input[tmppos] === '\t' ? '\t' : ' '
     }
