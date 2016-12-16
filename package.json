@@ -1,6 +1,6 @@
 {
   "name": "parse-json-pretty",
-  "version": "2.2.0",
+  "version": "0.1.0",
   "description": "Parse JSON with more helpful errors",
   "license": "MIT",
   "repository": "sorrycc/parse-json-pretty",
